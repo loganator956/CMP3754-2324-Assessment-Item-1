@@ -6,6 +6,7 @@ using UnityEngine.Animations;
 public class CarController : MonoBehaviour
 {
     public Vector2 SensingCastSize = new Vector2(8, 10);
+    public Vector2 CarSensingCastSize = new Vector2(2, 10);
     public float SensingZOffset = 3f;
     public Vector3 TargetPos;
     public bool IsDriving = true;
@@ -40,12 +41,24 @@ public class CarController : MonoBehaviour
                 IsDriving = false;
 
             Collider[] cols = Physics.OverlapBox(transform.position + transform.forward * (SensingZOffset + SensingCastSize.y / 2), new Vector3(SensingCastSize.x / 2, 1.5f, SensingCastSize.y / 2), transform.rotation);
+            Collider[] carCols = Physics.OverlapBox(transform.position + transform.forward * (SensingZOffset + CarSensingCastSize.y / 2), new Vector3(CarSensingCastSize.x / 2, 1.5f, CarSensingCastSize.y / 2), transform.rotation);
             bool _found = false;
             if (cols != null)
             {
                 foreach (Collider col in cols)
                 {
                     if (col.tag == "Pedestrian")
+                    {
+                        _found = true;
+                        break;
+                    }
+                }
+            }
+            if (carCols != null)
+            {
+                foreach (Collider col in carCols)
+                {
+                    if (col.tag == "Car")
                     {
                         _found = true;
                         break;

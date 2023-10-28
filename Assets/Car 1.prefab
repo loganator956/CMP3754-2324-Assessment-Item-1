@@ -867,9 +867,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1273357063865699723}
   - component: {fileID: 8798227937564546092}
+  - component: {fileID: 8541410509554901280}
   m_Layer: 0
   m_Name: Car 1
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -907,6 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SensingCastSize: {x: 8, y: 10}
+  CarSensingCastSize: {x: 2, y: 10}
   SensingZOffset: 3
   TargetPos: {x: 0, y: 0, z: 0}
   IsDriving: 1
@@ -955,6 +957,29 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &8541410509554901280
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939362865477237020}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Height: 4.93
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2403692024829156556
 GameObject:
   m_ObjectHideFlags: 0
