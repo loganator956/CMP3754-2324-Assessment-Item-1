@@ -85,7 +85,7 @@ public class CarController : MonoBehaviour
         else
         {
             if (_speed > 0)
-                _speed -= MaxAccel * Time.deltaTime * 4f;
+                _speed -= MaxAccel * Time.deltaTime * 2.5f;
         }
         transform.position += transform.forward * _speed * Time.deltaTime;
         _speed = Mathf.Clamp(_speed, 0f, MaxSpeed);
